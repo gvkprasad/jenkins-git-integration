@@ -3,9 +3,8 @@ pipeline {
    stages {
     stage ('checkout scm') {
       steps{
-        git credentialsId: '10da4c8c-bd48-4172-83e4-389d1226ba58', url: 'https://github.com/gvkprasad/devOpsWeb.git'
-        
-}
+        git credentialsId: '10da4c8c-bd48-4172-83e4-389d1226ba58', url: 'https://github.com/gvkprasad/devOpsWeb.git'        
+  }
 }
     stage ('Build') {
       steps {
