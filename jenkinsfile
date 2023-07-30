@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  tools {
+    maven 'maven-3.6.3' 
+  }
+  stages {
+    stage ('Build') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
+    stage ('Deploy') {
+      steps {
+        script {
+           deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://172.29.42.77:8090/')], contextPath: null, onFailure: false, war: '**/*.war'
+        }
+      }
+    }
+  }
+}
