@@ -1,7 +1,7 @@
 pipeline {
   agent any
    stages {
-    stage ('git code checkout ') {
+    stage ('git checkout') {
         steps {
           git credentialsId: '10da4c8c-bd48-4172-83e4-389d1226ba58', url: 'https://github.com/gvkprasad/jenkins-git-integration.git'
 }
